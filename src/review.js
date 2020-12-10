@@ -29,6 +29,13 @@ const prevPerson = ()=>{
         return checkNumber(newIndex)
     })
 }
+const randomPerson =()=>{
+ let abc = Math.floor(Math.random()* data.length)
+if(abc === index ){
+    abc = index + 1
+}
+setIndex(checkNumber(abc))
+}
 return(
    <article className="article-content">
    <div className="img">
@@ -43,10 +50,7 @@ return(
  <AiOutlineLeft onClick={prevPerson} />
  <AiOutlineRight onClick={nextPerson} />
  </div>
-<button className="btn" onClick={()=>{
-    const abc = Math.floor(Math.random()*data.length)
-setIndex(abc)
-}} >Surprise Me</button>
+<button className="btn" onClick={randomPerson} >Surprise Me</button>
   </article>
 )
  }
